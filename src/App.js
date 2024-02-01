@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import pickBodyPartsFromColor from './controllers/bodyController';
 
 // Component for each body part
-const Head = ({ imagePath }) => <img src={`/assets/${imagePath}`} alt="Head" />;
 const Body = ({ imagePath }) => <img src={`/assets/${imagePath}`} alt="Body" />;
 const Arm = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Arm" style={style} />;
 const Leg = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Leg" style={style} />;
@@ -38,7 +37,6 @@ function App() {
       <h1>Your Character</h1>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <div style={{ position: 'relative' }}>
-          <Head imagePath={bodyParts.head} />
           <Body imagePath={bodyParts.body} />
           <Arm imagePath={bodyParts.arm1} style={{ position: 'absolute', top: 50, left: -20 }} />
           <Arm imagePath={bodyParts.arm2} style={{ position: 'absolute', top: 50, right: -20 }} />

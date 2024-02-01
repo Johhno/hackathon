@@ -76,7 +76,7 @@ function pickMouth(color) {
 function pickNose(color) {
     const noseVariations = ["brown","green","red","yellow"]
     const noseVariation = getRandomItem(noseVariations)
-    const assetName = `nose_${color}${noseVariation}.png`
+    const assetName = `nose_${noseVariation}.png`
     return assetName
 }
 
