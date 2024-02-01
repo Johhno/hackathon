@@ -1,0 +1,44 @@
+{
+    "id": "9082437",
+    "intitule": "Technicien (H/F)",
+    "description": "Description du poste :\nADECCO Lyon Pharma recherche un deux Techniciens Formulation du Vivant H/F pour son client BOEHRINGER INGELHEIM, leader dans le domaine de la santé animale.\nCette mission d'intérim se situe sur le site de Saint Priest.\nFinalité du poste :\n-Réaliser un mélange de principes actifs pour effectuer la formulation\nVotre mission :\n-Décongeler les principes actifs au bain marie sous hotte à flux laminaire\n-Verser les principes actifs décongelés dans les cuves prévues à cet effet en respectant le niveau de propreté et d'asepsie qui est très élevé.\nLes différents principes actifs mélangés donnent la formulation.\nNous vous proposons :\nDémarrage de la mission : Au plus tôt\nDurée : 11 mois\nHoraires : Plages variables et fixes\nRémunération :13.92€/H + prime de 13ème et 14ème mois + indemnité des frais de transport ou remboursement à hauteur de 80% sur l'abonnement des transports en commun + restaurant d'entreprise.\nPostulez avec votre CV à jour !\nDescription du profil :\nVotre profil :\n-Niveau BAC à BAC +2\n-Expérience souhaitée en asepsie\n-Respect de la propreté / Hygiène, pour ne pas contaminer la zone\n-Connaissance des BPF\n-Bonne organisation\n-Bon relationnel\n-Esprit d'équipe",
+    "dateCreation": "2024-01-04T20:22:10.000Z",
+    "dateActualisation": "2024-02-01T11:32:23.000Z",
+    "lieuTravail": {
+        "libelle": "69 - ST PRIEST",
+        "latitude": 45.701812,
+        "longitude": 4.943979,
+        "codePostal": "69800",
+        "commune": "69290"
+    },
+    "romeCode": "M1810",
+    "romeLibelle": "Production et exploitation de systèmes d'information",
+    "appellationlibelle": "Technicien / Technicienne informatique",
+    "entreprise": {
+        "description": "Premier réseau d'agences d'emploi en France, Adecco a développé un savoir-faire unique de proximité et met toutes ses compétences à votre service.\nNos équipes sont présentes sur tout le territoire, avec plus de 900 agences. Quel que soit le contrat que vous cherchez : CDI, CDD, Intérim, CDI Intérimaire, CDI Apprenant ou alternance, nos experts travaillent chaque jour, pour vous guider vers ce qui vous correspond. Dès maintenant, devenez acteur de votre vie !",
+        "entrepriseAdaptee": false
+    },
+    "typeContrat": "MIS",
+    "typeContratLibelle": "Mission intérimaire - 11 Mois",
+    "natureContrat": "Contrat travail",
+    "experienceExige": "D",
+    "experienceLibelle": "Débutant accepté",
+    "salaire": {},
+    "alternance": false,
+    "nombrePostes": 1,
+    "accessibleTH": false,
+    "codeNAF": "78.20Z",
+    "secteurActivite": "78",
+    "secteurActiviteLibelle": "Activités des agences de travail temporaire",
+    "origineOffre": {
+        "origine": "2",
+        "urlOrigine": "https://candidat.pole-emploi.fr/offres/recherche/detail/9082437",
+        "partenaires": [
+            {
+                "nom": "METEOJOB",
+                "url": "https://www.meteojob.com/jobads/34689193?utm_source=pole-emploi&utm_medium=aggregator-free",
+                "logo": "https://www.pole-emploi.fr/static/img/partenaires/meteojob80.png"
+            }
+        ]
+    }
+}
