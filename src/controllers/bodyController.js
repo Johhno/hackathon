@@ -67,14 +67,14 @@ function pickLeg(color) {
 }
 
 function pickMouth(color) {
-    const mouthVariations = ["A", "B", "C", "D", "E"]
+    const mouthVariations = ["A", "B", "C", "D", "E","F","G","H","I"]
     const mouthVariation = getRandomItem(mouthVariations)
-    const assetName = `mouth_${color}${mouthVariation}.png`
+    const assetName = `mouth${mouthVariation}.png`
     return assetName
 }
 
 function pickNose(color) {
-    const noseVariations = ["A", "B", "C", "D", "E"]
+    const noseVariations = ["brown","green","red","yellow"]
     const noseVariation = getRandomItem(noseVariations)
     const assetName = `nose_${color}${noseVariation}.png`
     return assetName
