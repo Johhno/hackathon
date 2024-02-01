@@ -1,7 +1,5 @@
 /**
- * 
- * @param {*} color A color from "blue"," yellow","green" 
- * @returns A Javascript object listing PNG bodyParts URLs picked randomly of a specific color to be used on a character
+ * @returns A Javascript object listing PNG assets URLs picked randomly of a specific color to be used on a character
  * Example: {"arm1": "arm1_yellow.png","arm2: ..."}
  * Each body part has its own function to be ready for any different variations, or adding new body parts easily
  */
@@ -34,7 +32,10 @@ export default function pickBodyPartsFromColor(color) {
 }
 
 //Individual body parts, each with their own function to accommodate various variations (duh) and allow for easy new parts.
-//Picks 1 arm
+
+
+//Picks 2 arms
+//arm_color A to E, needs 2
 function pickArm(color) {
     const armVariations = ["A", "B", "C", "D", "E"]
     const armVariation = getRandomItem(armVariations)
@@ -90,3 +91,4 @@ function getRandomItem(array) {
     const randomIndex = Math.floor(Math.random() * array.length);
     return array[randomIndex];
 }
+
