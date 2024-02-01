@@ -1,8 +1,12 @@
-import React from 'react'
+// Refresh.js
+import React from 'react';
 
-export const Refresh = () => {
-
+const Refresh = ({ onClick }) => {
   return (
-    <div>Refresh</div>
-  )
-}
+    <button onClick={onClick}>
+      Refresh
+    </button>
+  );
+};
+
+export default Refresh;
