@@ -7,9 +7,10 @@ const Arm = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Arm
 const Leg = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Leg" style={style} />;
 const Nose = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Nose" style={style} />;
 const Mouth = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Mouth" style={style} />;
+const Eye = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Eye" style={style} />;
 //const Detail = 
 
-function App() {
+function Character() {
   const color = 'blue';
   const [bodyParts, setBodyParts] = useState(null);
 
@@ -38,6 +39,8 @@ function App() {
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <div style={{ position: 'relative' }}>
           <Body imagePath={bodyParts.body} />
+          <Eye imagePath={bodyParts.eye1} style={{ position: 'absolute', top: 20, left: 0 }} />
+          <Eye imagePath={bodyParts.eye2} style={{ position: 'absolute', top: 20, left: -50 }} />
           <Arm imagePath={bodyParts.arm1} style={{ position: 'absolute', top: 50, left: -20 }} />
           <Arm imagePath={bodyParts.arm2} style={{ position: 'absolute', top: 50, right: -20 }} />
           <Leg imagePath={bodyParts.leg1} style={{ position: 'absolute', top: 150, left: -10 }} />
@@ -47,25 +50,7 @@ function App() {
         </div>
       </div>
     </div>
-
-import React, { useEffect, useState } from 'react';
-import Character from './Character';
-import pickBodyPartsFromColor from './controllers/bodyController';
-
-// Component for each body part
-const Body = ({ imagePath }) => <img src={`/assets/${imagePath}`} alt="Body" />;
-const Arm = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Arm" style={style} />;
-const Leg = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Leg" style={style} />;
-const Nose = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Nose" style={style} />;
-const Mouth = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Mouth" style={style} />;
-const Eye = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Eye" style={style} />;
-//const Detail = 
-
-function App() {
-
-  return (
-    <Character />
   );
 }
 
-export default App;
+export default Character;
