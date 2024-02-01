@@ -7,6 +7,34 @@ let metaDatas = {
   experienceExige: "",
 };
 
+async function callAPI(
+  url,
+  libelleROME,
+  codeCR,
+  departement,
+  codeDepartement,
+  method,
+  headers,
+  body
+) {
+  try {
+    const apiUrl =
+      url + "?" + libelleROME + codeCR + "&" + departement + codeDepartement;
+    const response = await fetch(apiUrl, {
+      method: method,
+      headers: headers,
+      body: JSON.stringify(body),
+    });
+    if (!response.ok && response.status === 401) {
+      console.log(response);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
 function fetchData() {
   const url =
     "https://api.pole-emploi.io/partenaire/offresdemploi/v2/offres/search";
@@ -48,32 +76,4 @@ function fetchData() {
     .catch((error) => {
       console.error("API Error:", error);
     });
-}
-/////////////////////////////////////////////////////////////
-async function callAPI(
-  url,
-  libelleROME,
-  codeCR,
-  departement,
-  codeDepartement,
-  method,
-  headers,
-  body
-) {
-  try {
-    const apiUrl =
-      url + "?" + libelleROME + codeCR + "&" + departement + codeDepartement;
-    const response = await fetch(apiUrl, {
-      method: method,
-      headers: headers,
-      body: JSON.stringify(body),
-    });
-    if (!response.ok && response.status === 401) {
-      console.log(response);
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    throw error;
-  }
 }
