@@ -28,6 +28,7 @@ export default function pickBodyPartsFromColor(color) {
     bodyParts.leg2 = pickLeg(color)
     bodyParts.mouth = pickMouth(color)
     bodyParts.nose = pickNose(color)
+    console.log(bodyParts)
 
     return bodyParts;
 }
