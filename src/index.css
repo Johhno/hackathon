@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+MuiGrid2-root.MuiGrid2-direction-xs-row.css-hhor9n-MuiGrid2-root{
+    margin-top:10px
+}
+MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row css-wsh6gq-MuiGrid2-root{
+    margin-top:-40px
+}
+div.MuiGrid2-root.MuiGrid2-direction-xs-row.body-image.css-hhor9n-MuiGrid2-root{
+    -webkit-font-smoothing: antialiased;
+    color: rgba(0, 0, 0, 0.87);
+    --Grid-columns: 12;
+    --Grid-columnSpacing: 0px;
+    --Grid-rowSpacing: 0px;
+    --Grid-columnsLevel1: var(--Grid-columns);
+    --Grid-columnSpacingLevel1: var(--Grid-columnSpacing);
+    --Grid-rowSpacingLevel1: var(--Grid-rowSpacing);
+    min-width: 0;
+    box-sizing: border-box;
+    padding: calc(var(--Grid-rowSpacingLevel1) / 2) calc(var(--Grid-columnSpacingLevel1) / 2);
+    margin-left: -30px !important;
+    margin-right: -30px !important;
+ }
+ div.MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.leg-image.css-wsh6gq-MuiGrid2-root{
+
+ margin-top: -22px !important;
+ }
