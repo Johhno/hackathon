@@ -1,6 +1,4 @@
 /**
- * 
- * @param {*} color A color from "blue"," yellow","green" 
  * @returns A Javascript object listing PNG assets URLs picked randomly of a specific color to be used on a character
  * Example: {"arm1": "arm1_yellow.png","arm2: ..."}
  * Each body part has its own function to be ready for any different variations, or adding new body parts easily
@@ -17,24 +15,24 @@ export default function pickBodyPartsFromColor(color) {
     //let validBodyParts = ["arm", "body", "detail", "eye", "leg", "mouth", "nose", "snot"];
 
     //Create the whole body by adding parts separately, each being its own separated code 
-    const assets = {};
-    assets.arm1 = pickArm(color)
-    assets.arm2 = pickArm(color)
-    assets.body = pickBody(color)
-    assets.detail = pickDetail(color)
-    assets.leg1 = pickLeg(color)
-    assets.leg2 = pickLeg(color)
-    assets.mouth = pickMouth(color)
-    assets.nose = pickNose(color)
+    const bodyParts = {};
+    bodyParts.arm1 = pickArm(color)
+    bodyParts.arm2 = pickArm(color)
+    bodyParts.body = pickBody(color)
+    bodyParts.detail = pickDetail(color)
+    bodyParts.eye1 = pickEye(color)
+    bodyParts.eye2 = pickEye(color)
+    bodyParts.leg1 = pickLeg(color)
+    bodyParts.leg2 = pickLeg(color)
+    bodyParts.mouth = pickMouth(color)
+    bodyParts.nose = pickNose(color)
+    console.log(bodyParts)
 
-    return assets;
+    return bodyParts;
 }
 
-// Function to pick a random item from an array
-function getRandomItem(array) {
-    const randomIndex = Math.floor(Math.random() * array.length);
-    return array[randomIndex];
-}
+//Individual body parts, each with their own function to accommodate various variations (duh) and allow for easy new parts.
+
 
 //Picks 2 arms
 //arm_color A to E, needs 2
@@ -45,6 +43,7 @@ function pickArm(color) {
     return assetName
 }
 
+//Picks a detail
 function pickDetail(color) {
     let detailVariations = ["antenna_large", "antenna_small", "ear", "ear_round", "eye", "horn_large", "horn_small"]
     let detailVariation = getRandomItem(detailVariations)
@@ -67,17 +66,29 @@ function pickLeg(color) {
 }
 
 function pickMouth(color) {
-    const mouthVariations = ["A", "B", "C", "D", "E","F","G","H","I"]
+    const mouthVariations = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
     const mouthVariation = getRandomItem(mouthVariations)
     const assetName = `mouth${mouthVariation}.png`
     return assetName
 }
 
 function pickNose(color) {
-    const noseVariations = ["brown","green","red","yellow"]
+    const noseVariations = ["brown", "green", "red", "yellow"]
     const noseVariation = getRandomItem(noseVariations)
     const assetName = `nose_${noseVariation}.png`
     return assetName
 }
 
+function pickEye(color) {
+    const eyeVariations = ["angry_blue", "angry_green", "angry_red", "blue", "closed_feminine", "closed_happy", "cute_dark", "cute_light", "dead", "human", "human_blue", "human_green", "human_red", "psycho_dark", "psycho_light", "red", "yellow"]
+    const eyeVariation = getRandomItem(eyeVariations)
+    const assetName = `eye_${eyeVariation}.png`
+    return assetName
+}
+
+// Function to pick a random item from an array
+function getRandomItem(array) {
+    const randomIndex = Math.floor(Math.random() * array.length);
+    return array[randomIndex];
+}
 
