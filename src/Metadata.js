@@ -5,10 +5,10 @@ const Metadata = ({ jobOfferData }) => {
     <div>
       {jobOfferData ? (
         <div>
-          <p>Job Title: {jobOfferData.intitule}</p>
-          <p>Experience Required: {jobOfferData.experienceLibelle}</p>
-          <p>Date of Creation: {jobOfferData.dateCreation}</p>
-          <p>Department: {jobOfferData.departement}</p>
+          <p><strong>Job Title:</strong> {jobOfferData.intitule}</p>
+          <p><strong>Experience Required:</strong> {jobOfferData.experienceLibelle}</p>
+          <p><strong>Date of Creation:</strong> {jobOfferData.dateCreation}</p>
+          <p><strong>Department:</strong> {jobOfferData.departement}</p>
         </div>
       ) : (
         <p>Loading job offer data...</p>

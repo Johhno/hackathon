@@ -35,10 +35,10 @@ function App() {
   }, []);
 
   return (
-    <Grid container style={{ height: '100vh' }}>
-
-      <Grid item xs={12} sm={2} style={{ backgroundColor: 'lightgrey' }}>
-         <h1>Job Offer Information</h1>
+    <Grid container style={{ height: '100vh' }} wrap="nowrap" spacing={4}>
+      <Grid item xs={12} sm={3} style={{ backgroundColor: 'lightgrey' }}>
+      <div>
+         <h1 style={{color: '#bd2626'}}>Job Offer Information</h1>
 
         <div>
           <Metadata jobOfferData={jobOfferData} />
@@ -46,9 +46,10 @@ function App() {
           <h5>Tangent-Tech</h5>
 
         </div>
+       </div>
       </Grid>
       {/* 2/3 de la page */}
-      <Grid item xs={12} sm={10}>
+      <Grid item xs={12} sm={9}>
         {color && <Character color={color} />}
       </Grid>
     </Grid>

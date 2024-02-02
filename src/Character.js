@@ -35,49 +35,49 @@ const Character = ({ color }) => {
 
     return (
         <Grid container justifyContent="center">
-            <Grid item>
-                <Paper elevation={3} style={{ padding: '20px', width: '400px', height: '600px' }}>
-                    <div>
-
-                        <Grid container direction="column" alignItems="center">
-                            <Grid item container justifyContent="center">
-                                <Grid item>
-                                    <Eye imagePath={bodyParts.eye1} />
-                                </Grid>
-                                <Grid item>
-                                    <Eye imagePath={bodyParts.eye2} />
-                                </Grid>
-                            </Grid>
-                            <Grid item>
-                                <Nose imagePath={bodyParts.nose} />
-                            </Grid>
-                            <Grid item>
-                                <Mouth imagePath={bodyParts.mouth} />
-                            </Grid>
-                            <Grid item container >
-                                <Grid item>
-                                    <Arm imagePath={bodyParts.arm1} style={{ transform: 'scaleX(-1)' }} />
-                                </Grid>
-                                <Grid item>
-                                    <Body imagePath={bodyParts.body} />
-                                </Grid>
-                                <Grid item>
-                                    <Arm imagePath={bodyParts.arm2} />
-                                </Grid>
-                            </Grid>
-                            <Grid item container justifyContent="space-between">
-                                <Grid item>
-                                    <Leg imagePath={bodyParts.leg1} style={{ transform: 'scaleX(-1)' }} />
-                                </Grid>
-                                <Grid item>
-                                    <Leg imagePath={bodyParts.leg2} />
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </div>
-                </Paper>
-            </Grid>
+          <Grid item>
+            <Paper elevation={3} style={{ padding: '20px', width: '400px', height: '600px' }}>
+              <div>
+                <Grid container direction="column" alignItems="center">
+                  <Grid item container justifyContent="center">
+                    <Grid item>
+                      <Eye imagePath={bodyParts.eye1} />
+                    </Grid>
+                    <Grid item>
+                      <Eye imagePath={bodyParts.eye2} />
+                    </Grid>
+                  </Grid>
+                  <Grid item>
+                    <Nose imagePath={bodyParts.nose} />
+                  </Grid>
+                  <Grid item>
+                    <Mouth imagePath={bodyParts.mouth} />
+                  </Grid>
+                  <Grid item container justifyContent="center">
+                    <Grid item spacing={0}>
+                      <Arm imagePath={bodyParts.arm1} style={{ transform: 'scaleX(-1)' }} />
+                    </Grid>
+                    <Grid item spacing={0} className="body-image">
+                      <Body imagePath={bodyParts.body} zeroMinWidth />
+                    </Grid>
+                    <Grid item spacing={0}>
+                      <Arm imagePath={bodyParts.arm2} />
+                    </Grid>
+                  </Grid>
+                  <Grid item container justifyContent="center"  className="leg-image">
+                    <Grid item spacing={0}>
+                      <Leg imagePath={bodyParts.leg1} style={{ transform: 'scaleX(-1)' }} />
+                    </Grid>
+                    <Grid item spacing={0}>
+                      <Leg imagePath={bodyParts.leg2} />
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </div>
+            </Paper>
+          </Grid>
         </Grid>
+
     );
 }
 
