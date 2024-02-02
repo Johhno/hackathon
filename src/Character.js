@@ -1,8 +1,14 @@
+/**
+ * @author Alex, Yacine
+ * Handles the displaying of the character via the color provided by top-level component App.js, and pick random bodyparts via pickBodyPartsFromColor(color)
+ */
+
 import React, { useEffect, useState } from 'react';
 import pickBodyPartsFromColor from './controllers/bodyController';
-import { Box, Container, Stack, Typography, Unstable_Grid2 as Grid } from '@mui/material';
+import { Unstable_Grid2 as Grid } from '@mui/material';
 import Paper from '@mui/material/Paper';
 
+//Body parts ass their own HTML tags
 const Body = ({ imagePath }) => <img src={`/assets/${imagePath}`} alt="Body" />;
 const Arm = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Arm" style={style} />;
 const Leg = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Leg" style={style} />;
@@ -12,26 +18,35 @@ const Eye = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Eye
 
 const Character = ({ color }) => {
   const [bodyParts, setBodyParts] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchDataAndDrawCharacter = async () => {
-      try {
-        console.log("Color in cahracter", color)
-        const fetchedBodyParts = await pickBodyPartsFromColor(color);
-        setBodyParts(fetchedBodyParts);
-        
-      } catch (error) {
-        console.error('Error fetching or drawing character:', error);
-      }
-    };
-
     fetchDataAndDrawCharacter();
   }, [color]); // Trigger fetch and redraw when color changes
 
-    if (!bodyParts) {
-        // Render loading state or return null if you prefer
-        return <p>Loading...</p>;
+  const fetchDataAndDrawCharacter = async () => {
+    try {
+      //console.log("Color in character", color)
+      //Retrieves random body parts according to the retrieved color from top-level component App.js
+      const fetchedBodyParts = await pickBodyPartsFromColor(color);
+      setBodyParts(fetchedBodyParts);
+      setLoading(false)
+
+    } catch (error) {
+      console.error('Error fetching or drawing character:', error);
     }
+    finally {
+      setLoading(false);
+    }
+  };
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (!bodyParts) {
+    // Render loading state or return null if you prefer
+    return <p>Error loading character</p>;
+  }
 
     return (
         <Grid container justifyContent="center">
