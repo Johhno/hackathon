@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Metadata from './Metadata';
 import Character from './Character';
+import { Box, Container, Stack, Typography, Unstable_Grid2 as Grid } from '@mui/material';
 import fetchData from './controllers/Api';
+
 
 function App() {
   // Retrieve stored color or use the default
@@ -33,14 +35,23 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h1>Job Offer Information</h1>
-      <Metadata jobOfferData={jobOfferData} />
-      <hr />
-      <h1>Your Character</h1>
-      {color && <Character color={color} />}
-    </div>
-  );
-}
+    <Grid container style={{ height: '100vh' }}>
 
+      <Grid item xs={12} sm={2} style={{ backgroundColor: 'lightgrey' }}>
+         <h1>Job Offer Information</h1>
+
+        <div>
+          <Metadata jobOfferData={jobOfferData} />
+          <hr />
+          <h5>Tangent-Tech</h5>
+
+        </div>
+      </Grid>
+      {/* 2/3 de la page */}
+      <Grid item xs={12} sm={10}>
+        {color && <Character color={color} />}
+      </Grid>
+    </Grid>
+    )
+  }
 export default App;
