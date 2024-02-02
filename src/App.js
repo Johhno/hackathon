@@ -1,64 +1,57 @@
-/**
- * @author Alex
- * Handles the display of Homepage, along with fetching the necessary data from API and passing it to its children components, Metadata and Character?
- */
-
 import React, { useState, useEffect } from 'react';
 import Metadata from './Metadata';
 import Character from './Character';
+import { Box, Container, Stack, Typography, Unstable_Grid2 as Grid } from '@mui/material';
 import fetchData from './controllers/Api';
 
+
 function App() {
+  // Retrieve stored color or use the default
   const [color, setColor] = useState(null);
   const [jobOfferData, setJobOfferData] = useState(null);
-  const [loading, setLoading] = useState(true);
 
-  //Color map
+  // Map experienceExige to corresponding color
   const colorMap = {
     D: 'blue',
     E: 'yellow',
     S: 'green',
-  }
+  };
 
-  //Retrieve API data
-  const fetchJobData = async () => {
-    try {
-      // Check if job data is already available as safety measure
-      if (!jobOfferData) {
+  useEffect(() => {
+    const fetchJobData = async () => {
+      try {
         const data = await fetchData();
         setJobOfferData(data);
 
-        //Match the experience to the color to be passsed to the character
-        const newColor = data?.experienceExige ? colorMap[data.experienceExige] || null : null;
+        // Set color based on experienceExige value
+        const newColor = data?.experienceExige ? colorMap[data.experienceExige] || 'blue' : 'blue';
         setColor(newColor);
-        setLoading(false)
+      } catch (error) {
+        console.error('Error fetching job offer data:', error);
       }
-    } catch (error) {
-      console.error('Error fetching job offer data:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+    };
 
-  //Fetch once on component loading
-  useEffect(() => {
     fetchJobData();
   }, []);
 
-  //Retrieves the data at top-level component to pass data to children
   return (
-    <div>
-      <h1>Job Offer Information</h1>
-      <Metadata jobOfferData={jobOfferData} />
-      <hr />
-      <h1>Your Character</h1>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        color && <Character color={color} />
-      )}
-    </div>
-  );
-}
+    <Grid container style={{ height: '100vh' }}>
 
+      <Grid item xs={12} sm={2} style={{ backgroundColor: 'lightgrey' }}>
+         <h1>Job Offer Information</h1>
+
+        <div>
+          <Metadata jobOfferData={jobOfferData} />
+          <hr />
+          <h5>Tangent-Tech</h5>
+
+        </div>
+      </Grid>
+      {/* 2/3 de la page */}
+      <Grid item xs={12} sm={10}>
+        {color && <Character color={color} />}
+      </Grid>
+    </Grid>
+    )
+  }
 export default App;
