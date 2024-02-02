@@ -1,3 +1,8 @@
+/**
+ * @author Alex
+ * Displays the Metadata from retrieved job offers.
+ */
+
 import React from 'react';
 
 const Metadata = ({ jobOfferData }) => {

@@ -143,7 +143,7 @@ describe('fetchData', () => {
       expect(data.intitule).toBe('Ingénieur Devops  -  ARANUM24  (H/F)');
       expect(data.experienceLibelle).toBe("1 an - en environnements Devops");
       expect(data.dateCreation).toBe('2024-01-19');
-      expect(data.departement).toBe('69');
+      expect(data.departement).toBe('69003');
       expect(data.experienceExige).toBe('E');
     });
   });
