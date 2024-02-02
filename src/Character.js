@@ -3,32 +3,30 @@ import pickBodyPartsFromColor from './controllers/bodyController';
 import { Box, Container, Stack, Typography, Unstable_Grid2 as Grid } from '@mui/material';
 import Paper from '@mui/material/Paper';
 
-// Component for each body part
 const Body = ({ imagePath }) => <img src={`/assets/${imagePath}`} alt="Body" />;
 const Arm = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Arm" style={style} />;
 const Leg = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Leg" style={style} />;
 const Nose = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Nose" style={style} />;
 const Mouth = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Mouth" style={style} />;
 const Eye = ({ imagePath, style }) => <img src={`/assets/${imagePath}`} alt="Eye" style={style} />;
-//const Detail = 
 
-function Character() {
-    const color = 'blue';
-    const [bodyParts, setBodyParts] = useState(null);
+const Character = ({ color }) => {
+  const [bodyParts, setBodyParts] = useState(null);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const fetchedBodyParts = await pickBodyPartsFromColor(color);
-                setBodyParts(fetchedBodyParts);
-                console.log(bodyParts)
-            } catch (error) {
-                console.error('Error fetching body parts:', error);
-            }
-        };
+  useEffect(() => {
+    const fetchDataAndDrawCharacter = async () => {
+      try {
+        console.log("Color in cahracter", color)
+        const fetchedBodyParts = await pickBodyPartsFromColor(color);
+        setBodyParts(fetchedBodyParts);
+        
+      } catch (error) {
+        console.error('Error fetching or drawing character:', error);
+      }
+    };
 
-        fetchData();
-    }, [color]);
+    fetchDataAndDrawCharacter();
+  }, [color]); // Trigger fetch and redraw when color changes
 
     if (!bodyParts) {
         // Render loading state or return null if you prefer

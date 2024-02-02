@@ -1,15 +1,17 @@
-import React from 'react'
+import React from 'react';
 import Button from '@mui/material/Button';
 
-export const Refresh = () => {
-
+const Refresh = ({ onClick }) => {
   return (
-   <nav className="navbar navbar-light bg-light">
-            <a className="navbar-brand" href="#" >
-                <Button variant="contained" color="primary">
-                    Refresh
-                </Button>
-            </a>
-        </nav>
-  )
+    <nav className="navbar navbar-light bg-light">
+      <a className="navbar-brand" href="#" onClick={onClick}>
+        <Button variant="contained" color="primary">
+          Refresh
+        </Button>
+      </a>
+    </nav>
+  );
 }
+
+export default Refresh;
+
