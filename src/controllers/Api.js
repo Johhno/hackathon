@@ -1,4 +1,4 @@
-const TOKEN = "3NjRyOobGRtOAIL68fPt66xLvmw";
+const TOKEN = "3PI9WdcTyjygov2y3H8ofVna4rAzY8HV8SNAWm_NBwwHsOZyt9ceks";
 let metaDatas = {
   intitule: "",
   experienceLibelle: "",
@@ -81,7 +81,7 @@ export default async function fetchData() {
     metaDatas.intitule = offre.intitule;
     metaDatas.experienceLibelle = offre.experienceLibelle;
     metaDatas.dateCreation = dateCreationOffre.toISOString().split('T')[0];
-    metaDatas.departement = offre.lieuTravail.codePostal.substring(0, 2);
+    metaDatas.departement = offre.lieuTravail.codePostal;
     metaDatas.experienceExige = offre.experienceExige;
 
     return metaDatas;
